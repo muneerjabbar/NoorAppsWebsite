@@ -10,7 +10,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://noorapps.net/" />
   <link rel="canonical" href="https://noorapps.net/" />
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="images/noorapps-mark.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,680&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -88,21 +88,12 @@
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 0.7rem;
       text-decoration: none;
-      font-weight: 800;
     }
 
-    .mark {
-      width: 36px;
-      height: 36px;
-      flex: none;
-    }
-
-    .brand span {
-      font-family: "Fraunces", Georgia, serif;
-      font-size: 1.25rem;
-      letter-spacing: -0.03em;
+    .brand img {
+      height: 68px;
+      width: auto;
     }
 
     .nav-links {
@@ -388,6 +379,8 @@
 
       .hero { padding-top: 2.4rem; }
 
+      .brand img { height: 56px; }
+
       .hero-icons { max-width: 420px; }
 
       .app {
@@ -419,14 +412,7 @@
   <header class="site-header">
     <div class="nav-inner">
       <a class="brand" href="#top" aria-label="Noor Apps home">
-        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
-          <rect width="64" height="64" rx="16" fill="#1c1917"/>
-          <circle cx="32" cy="32" r="12" fill="#f6c453"/>
-          <g stroke="#f6c453" stroke-width="2.4" stroke-linecap="round">
-            <path d="M32 8v6M32 50v6M8 32h6M50 32h6M14.5 14.5l4.2 4.2M45.3 45.3l4.2 4.2M14.5 49.5l4.2-4.2M45.3 18.7l4.2-4.2"/>
-          </g>
-        </svg>
-        <span>Noor Apps</span>
+        <img src="images/noorapps-logo.png" alt="" width="76" height="68" />
       </a>
       <nav class="nav-links" aria-label="Primary">
         <a href="#apps">Our apps</a>
@@ -496,8 +482,8 @@
 
       <section class="section" id="apps" aria-labelledby="apps-title">
         <p class="eyebrow">Our apps</p>
-        <h2 id="apps-title">Three apps. One idea.</h2>
-        <p class="intro">Open an app to visit its site. The whole card — icon included — takes you there.</p>
+        <h2 id="apps-title">Many apps. Many ideas.</h2>
+        <p class="intro">Open an app to visit its site.</p>
 
         <div class="apps">
           <a class="app life" href="https://lifepilot.noorapps.net/">
