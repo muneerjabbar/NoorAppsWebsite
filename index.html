@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Noor Apps — Practical tools for everyday life</title>
+  <meta name="description" content="Noor Apps builds focused, local-first apps for everyday life. LifePilot, Rent Manager, and CallPilot help you organise, keep records, and stay connected — with your data on your device." />
+  <meta property="og:title" content="Noor Apps" />
+  <meta property="og:description" content="Practical tools for everyday life. LifePilot, Rent Manager, and CallPilot — built so your data stays yours." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://noorapps.net/" />
+  <link rel="canonical" href="https://noorapps.net/" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,680&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1c1917;
+      --muted: #57534e;
+      --paper: #faf7f2;
+      --card: #fffdf9;
+      --line: rgba(28, 25, 23, 0.1);
+      --gold: #b45309;
+      --gold-soft: #f6c453;
+      --life: #2451c4;
+      --rent: #0f766e;
+      --call: #4f46e5;
+      --shadow: 0 18px 50px rgba(28, 25, 23, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Manrope", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(820px 420px at 8% -10%, rgba(36, 81, 196, 0.14), transparent 60%),
+        radial-gradient(720px 380px at 100% 0%, rgba(15, 118, 110, 0.13), transparent 55%),
+        radial-gradient(640px 360px at 70% 18%, rgba(246, 196, 83, 0.28), transparent 50%),
+        var(--paper);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    img { display: block; max-width: 100%; }
+
+    .skip {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      background: var(--ink);
+      color: #fff;
+      padding: 0.55rem 0.9rem;
+      border-radius: 999px;
+      z-index: 40;
+    }
+
+    .skip:focus { top: 0.75rem; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(250, 247, 242, 0.84);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner,
+    .wrap {
+      width: min(72rem, calc(100% - 2.4rem));
+      margin: 0 auto;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.85rem 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .mark {
+      width: 36px;
+      height: 36px;
+      flex: none;
+    }
+
+    .brand span {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.25rem;
+      letter-spacing: -0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 1.15rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible { color: var(--ink); }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2.5rem;
+      align-items: center;
+      padding: 4.2rem 0 3.2rem;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.75rem;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    h1 {
+      margin: 0 0 1rem;
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 560;
+      font-size: clamp(2.7rem, 6vw, 4.6rem);
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+    }
+
+    .lead {
+      margin: 0 0 1.6rem;
+      max-width: 38rem;
+      color: var(--muted);
+      font-size: 1.12rem;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0.65rem 1.15rem;
+      border-radius: 999px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--ink);
+      color: #fffdf8;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible { background: #292524; }
+
+    .btn-ghost {
+      border: 1.5px solid rgba(28, 25, 23, 0.22);
+      color: var(--ink);
+    }
+
+    .btn-ghost:hover,
+    .btn-ghost:focus-visible { border-color: var(--ink); }
+
+    .hero-icons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+      justify-items: center;
+    }
+
+    .hero-icons a {
+      display: block;
+      text-decoration: none;
+      border-radius: 28%;
+    }
+
+    .hero-icons a:first-child {
+      grid-column: 1 / -1;
+    }
+
+    .hero-icons img {
+      width: min(168px, 34vw);
+      height: auto;
+      border-radius: 28%;
+      box-shadow: var(--shadow);
+      transition: transform 180ms ease;
+    }
+
+    .hero-icons a:hover img,
+    .hero-icons a:focus-visible img { transform: translateY(-4px); }
+
+    .section { padding: 1.2rem 0 3.6rem; }
+
+    .section h2 {
+      margin: 0 0 0.7rem;
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 560;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      letter-spacing: -0.03em;
+    }
+
+    .intro {
+      margin: 0 0 1.5rem;
+      max-width: 44rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .principle {
+      padding: 1.2rem 1.2rem 1.3rem;
+      background: rgba(255, 253, 249, 0.72);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+
+    .principle strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-size: 1.02rem;
+    }
+
+    .principle p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .apps {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .app {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1.35rem;
+      align-items: center;
+      padding: 1.25rem 1.35rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      text-decoration: none;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset;
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .app:hover,
+    .app:focus-visible {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+      outline: none;
+    }
+
+    .app:focus-visible { border-color: var(--ink); }
+
+    .app.life:hover { border-color: rgba(36, 81, 196, 0.45); }
+    .app.rent:hover { border-color: rgba(15, 118, 110, 0.45); }
+    .app.call:hover { border-color: rgba(79, 70, 229, 0.45); }
+
+    .app img {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      object-fit: cover;
+    }
+
+    .app h3 {
+      margin: 0.15rem 0 0.15rem;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 560;
+      letter-spacing: -0.03em;
+    }
+
+    .tag {
+      margin: 0 0 0.45rem;
+      font-weight: 800;
+      font-size: 0.92rem;
+    }
+
+    .app.life .tag { color: var(--life); }
+    .app.rent .tag { color: var(--rent); }
+    .app.call .tag { color: var(--call); }
+
+    .app p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 62ch;
+    }
+
+    .go {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 0.75rem;
+      font-weight: 800;
+      font-size: 0.92rem;
+      color: var(--ink);
+    }
+
+    .go span { transition: transform 180ms ease; }
+
+    .app:hover .go span,
+    .app:focus-visible .go span { transform: translateX(4px); }
+
+    .domain {
+      justify-self: end;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 1.6rem 0 2.2rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem 2rem;
+      align-items: flex-end;
+    }
+
+    .site-footer strong {
+      display: block;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 560;
+      margin-bottom: 0.25rem;
+    }
+
+    .site-footer p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      max-width: 36rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.2rem;
+      font-weight: 800;
+    }
+
+    .footer-links a { color: var(--ink); }
+
+    .footer-links a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    @media (max-width: 860px) {
+      .hero,
+      .principles { grid-template-columns: 1fr; }
+
+      .hero { padding-top: 2.4rem; }
+
+      .hero-icons { max-width: 420px; }
+
+      .app {
+        grid-template-columns: auto 1fr;
+      }
+
+      .domain { display: none; }
+    }
+
+    @media (max-width: 560px) {
+      .app {
+        grid-template-columns: 1fr;
+      }
+
+      .app img { width: 80px; height: 80px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .app,
+      .hero-icons img,
+      .go span { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#apps">Skip to our apps</a>
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="Noor Apps home">
+        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="16" fill="#1c1917"/>
+          <circle cx="32" cy="32" r="12" fill="#f6c453"/>
+          <g stroke="#f6c453" stroke-width="2.4" stroke-linecap="round">
+            <path d="M32 8v6M32 50v6M8 32h6M50 32h6M14.5 14.5l4.2 4.2M45.3 45.3l4.2 4.2M14.5 49.5l4.2-4.2M45.3 18.7l4.2-4.2"/>
+          </g>
+        </svg>
+        <span>Noor Apps</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#apps">Our apps</a>
+        <a href="#about">About</a>
+        <a href="mailto:noorappssupport@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="wrap">
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow">Noor Apps</p>
+          <h1 id="hero-title">Practical tools for everyday life.</h1>
+          <p class="lead">
+            We build focused apps that help people organise their days, keep rental records,
+            and stay connected. Clear screens, useful workflows, and data that stays on your device.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#apps">See our apps</a>
+            <a class="btn btn-ghost" href="mailto:noorappssupport@gmail.com">Contact us</a>
+          </div>
+        </div>
+        <div class="hero-icons" aria-label="App icons">
+          <a href="https://lifepilot.noorapps.net/" aria-label="LifePilot">
+            <img src="images/lifepilot.jpg" alt="LifePilot icon" width="168" height="168" />
+          </a>
+          <a href="https://rentmanager.noorapps.net/" aria-label="Rent Manager">
+            <img src="images/rent-manager.jpg" alt="Rent Manager icon" width="168" height="168" />
+          </a>
+          <a href="https://callpilot.noorapps.net/" aria-label="CallPilot">
+            <img src="images/callpilot.png" alt="CallPilot icon" width="168" height="168" />
+          </a>
+        </div>
+      </section>
+
+      <section class="section" id="about" aria-labelledby="about-title">
+        <p class="eyebrow">About Noor Apps</p>
+        <h2 id="about-title">Technology that benefits communities.</h2>
+        <p class="intro">
+          At Noor Apps, we believe technology should make a meaningful difference in people’s lives.
+          We build applications that solve real-world problems for individuals, families, and communities —
+          practical tools for ordinary days, not complicated enterprise software.
+        </p>
+        <p class="intro">
+          Some of our projects grow as community initiatives. Others are commercial products that sustain
+          the work and let us keep making useful apps. Across all of them, the same idea holds: records
+          should be easy to trust, and your information should stay in your hands. We are committed to
+          reliable, user-friendly applications built with sincerity, quality, and purpose.
+        </p>
+        <div class="principles">
+          <article class="principle">
+            <strong>Useful before clever</strong>
+            <p>Each app focuses on the daily jobs people actually do — tasks, rent, calls, receipts, reminders — and leaves the rest out.</p>
+          </article>
+          <article class="principle">
+            <strong>Local-first privacy</strong>
+            <p>No account is required to start. Plans, tenancies, and lists live on the phone. Backup, when it exists, is optional and yours.</p>
+          </article>
+          <article class="principle">
+            <strong>Free to begin</strong>
+            <p>Core features are useful without a subscription. Pro unlocks higher limits and extras inside the same app when you need them.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="apps" aria-labelledby="apps-title">
+        <p class="eyebrow">Our apps</p>
+        <h2 id="apps-title">Three apps. One idea.</h2>
+        <p class="intro">Open an app to visit its site. The whole card — icon included — takes you there.</p>
+
+        <div class="apps">
+          <a class="app life" href="https://lifepilot.noorapps.net/">
+            <img src="images/lifepilot.jpg" alt="" width="96" height="96" />
+            <div>
+              <p class="tag">Organise. Remember. Manage.</p>
+              <h3>LifePilot</h3>
+              <p>
+                Your personal life management assistant. Tasks, phone call plans, expenses, loan repayments,
+                measure, world clock, QR and barcode, compass, voice recorder, calendar, journal, documents,
+                and more — kept locally on your device. Practical tools for ordinary days, without cloud accounts.
+              </p>
+              <span class="go">Visit LifePilot <span aria-hidden="true">→</span></span>
+            </div>
+            <span class="domain">lifepilot.noorapps.net</span>
+          </a>
+
+          <a class="app rent" href="https://rentmanager.noorapps.net/">
+            <img src="images/rent-manager.jpg" alt="" width="96" height="96" />
+            <div>
+              <p class="tag">Rent made calmer.</p>
+              <h3>Rent Manager</h3>
+              <p>
+                A local-first app for tenancies, rent payments, discounts, PDF receipts, reminders, maintenance
+                logs, and backups. Keep property and tenant details together on your phone, with clear records
+                from move-in to receipt — without spreadsheets or scattered notes.
+              </p>
+              <span class="go">Visit Rent Manager <span aria-hidden="true">→</span></span>
+            </div>
+            <span class="domain">rentmanager.noorapps.net</span>
+          </a>
+
+          <a class="app call" href="https://callpilot.noorapps.net/">
+            <img src="images/callpilot.png" alt="" width="96" height="96" />
+            <div>
+              <p class="tag">Plan. Remember. Connect.</p>
+              <h3>CallPilot</h3>
+              <p>
+                Your personal call-planning assistant. Organize contacts, schedule reminders, and run sequential
+                call trees — stored locally on your device. Practical tools to remember who to call, when, and
+                what to say, with no login and no CallPilot servers.
+              </p>
+              <span class="go">Visit CallPilot <span aria-hidden="true">→</span></span>
+            </div>
+            <span class="domain">callpilot.noorapps.net</span>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <strong>Noor Apps</strong>
+        <p>Building technology that benefits communities. Questions and feedback are welcome.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="https://lifepilot.noorapps.net/">LifePilot</a>
+        <a href="https://rentmanager.noorapps.net/">Rent Manager</a>
+        <a href="https://callpilot.noorapps.net/">CallPilot</a>
+        <a href="mailto:noorappssupport@gmail.com">noorappssupport@gmail.com</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
