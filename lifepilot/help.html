@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CW8V3925K0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-CW8V3925K0');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Help – LifePilot</title>
+  <meta name="description" content="How to use LifePilot – one app for everyday tools including scan, measure, money, calls, notes, calendar, backup, Free vs Pro, and more." />
+  <link rel="canonical" href="https://lifepilot.noorapps.net/help.html" />
+  <link rel="icon" href="images/lifepilot-logo.jpg" type="image/jpeg" />
+  <style>
+    :root {
+      --ink: #1a1f36;
+      --muted: #5b647a;
+      --bg: #f1f5f9;
+      --paper: #ffffff;
+      --line: #dbe4ee;
+      --accent: #2451c4;
+      --accent-soft: #dbe7ff;
+      --gold: #b45309;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 10% -10%, #dbe7ff 0%, transparent 55%),
+        radial-gradient(900px 400px at 100% 0%, #c8f5ef 0%, transparent 50%),
+        var(--bg);
+      line-height: 1.65;
+    }
+
+    main {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+
+    header {
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.35rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin: 0 0 0.5rem;
+    }
+
+    h1 {
+      margin: 0 0 0.55rem;
+      font-size: clamp(1.85rem, 4.5vw, 2.4rem);
+      line-height: 1.15;
+      font-weight: 800;
+    }
+
+    .tagline {
+      margin: 0;
+      color: var(--gold);
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    nav.toc {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    nav.toc h2 {
+      margin: 0 0 0.6rem;
+      font-size: 1rem;
+      color: var(--accent);
+    }
+
+    nav.toc ol {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    nav.toc li { margin-bottom: 0.3rem; }
+
+    section {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.25rem 1.35rem;
+      margin-bottom: 1rem;
+      scroll-margin-top: 1rem;
+    }
+
+    .hero {
+      background: linear-gradient(160deg, var(--accent-soft) 0%, var(--paper) 70%);
+      border-color: #bfdbfe;
+    }
+
+    h2 {
+      margin: 0 0 0.7rem;
+      font-size: 1.15rem;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    h3 {
+      margin: 1rem 0 0.45rem;
+      font-size: 1rem;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    p, li {
+      color: var(--ink);
+      margin: 0 0 0.75rem;
+    }
+
+    p:last-child, ul:last-child { margin-bottom: 0; }
+
+    ul {
+      margin: 0 0 0.75rem;
+      padding-left: 1.2rem;
+    }
+
+    li { margin-bottom: 0.4rem; }
+
+    a {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    .tip {
+      margin-top: 0.85rem;
+      padding: 0.75rem 0.9rem;
+      background: var(--accent-soft);
+      border-radius: 10px;
+      border: 1px solid #bfdbfe;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      margin-top: 1.5rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .page-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem 1.15rem;
+      margin: 0.85rem 0 0;
+      font-size: 0.95rem;
+    }
+
+    .get-app {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff !important;
+      text-decoration: none !important;
+      font-weight: 800;
+    }
+
+    .share-app {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      min-height: 44px;
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      border: 1.5px solid var(--accent);
+      color: var(--accent) !important;
+      text-decoration: none !important;
+      font-weight: 800;
+    }
+
+    .share-icon {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="brand"><a href="index.html" style="color: inherit; text-decoration: none;">LifePilot</a></p>
+      <h1>Help</h1>
+      <p class="tagline">How to use LifePilot — one app for everyday tools</p>
+      <p class="page-links">
+        <a class="get-app" href="app.html">Get the app</a>
+        <a class="share-app" href="app.html" data-share-app>Share App</a>
+        <a href="index.html">Home</a>
+        <a href="aboutus.html">About Us</a>
+      </p>
+    </header>
+
+    <section class="hero">
+      <h2>Welcome</h2>
+      <p>
+        LifePilot puts everyday tools into one app so you do not need a pile of separate
+        downloads: PDF scanning, measuring and a digital ruler, QR and barcodes, compass,
+        calculator, world clock, voice recorder, calendar, expenses, borrowed and lent money,
+        scheduled calls, call trees, bulk SMS, menstrual calendar, notes, journal, document
+        shelf, vehicles, and tasks, reminders, and follow-ups.
+      </p>
+      <p>
+        Everything is stored on your device. No LifePilot account is required to start using the app.
+      </p>
+    </section>
+
+    <nav class="toc" aria-label="Help topics">
+      <h2>Quick topics</h2>
+      <ol>
+        <li><a href="#getting-started">Getting started</a></li>
+        <li><a href="#navigation">Navigation</a></li>
+        <li><a href="#dashboard">Dashboard, menu &amp; Quick Add</a></li>
+        <li><a href="#manage">Manage: tasks, calls &amp; contacts</a></li>
+        <li><a href="#money">Money: expense / income, loans, bills</a></li>
+        <li><a href="#life">Life: dates, journal, cycle &amp; assets</a></li>
+        <li><a href="#tools">Tools: clock, codes, measure &amp; more</a></li>
+        <li><a href="#notifications">Notifications</a></li>
+        <li><a href="#backup">Backup &amp; Google Drive</a></li>
+        <li><a href="#security">Security, search &amp; calendar sync</a></li>
+        <li><a href="#free-pro">Free vs Pro</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#tips">Tips &amp; contact</a></li>
+      </ol>
+    </nav>
+
+    <section id="getting-started">
+      <h2>Getting started</h2>
+      <ul>
+        <li>Install LifePilot and open it — you can start immediately.</li>
+        <li>Allow notifications when prompted so reminders and call alerts can fire on time.</li>
+        <li>Use <strong>Quick Add</strong> on the Home tab to create your first task, expense, or note.</li>
+      </ul>
+      <p class="tip">
+        LifePilot works fully offline for normal use. Internet is only needed for optional Google Drive backup (Pro), store subscription operations, and opening store / WhatsApp / website links from the menu.
+      </p>
+    </section>
+
+    <section id="navigation">
+      <h2>Navigation</h2>
+      <p>The bottom bar has six areas:</p>
+      <ul>
+        <li><strong>Home</strong> — dashboard and attention items</li>
+        <li><strong>Manage</strong> — tasks, reminders, follow-ups, schedule phone call, call tree, bulk SMS, favourite contacts &amp; groups</li>
+        <li><strong>Tools</strong> — world clock, QR, barcode, compass, measure, digital ruler, voice recorder, calendar, plus Pro PDF scanner and calculator</li>
+        <li><strong>Money</strong> — expense / income, borrowed &amp; lent money, bills, subscriptions, reports</li>
+        <li><strong>Life</strong> — document shelf, notes, journals, menstrual calendar, important dates, goals, home, vehicles</li>
+        <li><strong>More</strong> — search, reports, calendar sync, backup, subscription, security, notifications</li>
+      </ul>
+    </section>
+
+    <section id="dashboard">
+      <h2>Dashboard, menu &amp; Quick Add</h2>
+      <p>
+        Home shows what needs attention today — tasks, reminders, scheduled calls,
+        call trees, follow-ups, bills, and loans — plus upcoming items for the next few weeks.
+      </p>
+      <ul>
+        <li>Tap a card or list item to open the related record.</li>
+        <li>
+          Use the <strong>+</strong> button for Quick Add (task, expense/income, reminder,
+          schedule call, call tree, loan, note, follow-up, bill, subscription, important date,
+          journal, contact, Bulk SMS, and more).
+        </li>
+        <li>Open the <strong>☰ menu</strong> (top right) for Upgrade to Pro, Create widgets, Install Latest Version, WhatsApp channel, Share App, Help, Raise an Issue, About Us, Our website, and the app version.</li>
+        <li><strong>Raise an Issue</strong> opens your email app with To set to <strong>noorappssupport@gmail.com</strong> and subject <strong>LifePilot:Issue:</strong>.</li>
+      </ul>
+    </section>
+
+    <section id="manage">
+      <h2>Manage: tasks, calls &amp; contacts</h2>
+      <h3>Tasks, reminders &amp; follow-ups</h3>
+      <ul>
+        <li><strong>Tasks</strong> — priority, due date, notes, category, optional recurrence. Tap the tick to mark complete (strikethrough stays on the list); use the delete icon to remove.</li>
+        <li><strong>Reminders</strong> — date/time with local notifications and repeat options. Same complete (strikethrough) and delete actions.</li>
+        <li><strong>Follow-ups</strong> — person, subject, due date, status, and notes. Same complete and delete actions.</li>
+      </ul>
+      <h3>Schedule Phone Call</h3>
+      <ul>
+        <li>Pick a contact, group, or phone number and a date/time.</li>
+        <li>LifePilot reminds you locally with your phone’s default ringtone; open the dialer when it is time to call.</li>
+      </ul>
+      <h3>Call Tree</h3>
+      <ul>
+        <li>Build an ordered list of people to call.</li>
+        <li>Add recipients from phone contacts, saved LifePilot contacts, or a contact group.</li>
+        <li>At reminder time, walk through Call / Skip / Next until you finish the list.</li>
+      </ul>
+      <h3>Contacts &amp; Groups</h3>
+      <ul>
+        <li>Save favourite contacts (import from your address book with permission, or add manually).</li>
+        <li>Organise them into groups for call plans, call trees, and SMS.</li>
+      </ul>
+      <h3>Bulk SMS</h3>
+      <ul>
+        <li>Listed for everyone. <strong>Pro</strong> unlocks composing a message to multiple contacts or groups.</li>
+        <li>LifePilot opens your Messages app — you confirm Send. It does not send SMS silently.</li>
+      </ul>
+    </section>
+
+    <section id="money">
+      <h2>Money: expense / income, loans, bills</h2>
+      <ul>
+        <li><strong>Expense / Income</strong> — log spending or income with amount, date, notes, and categories. Use built-in categories or add your own. View this month and this year income, expense, and balance. <strong>Charts</strong> (income vs expense, trends, categories, top spends) and monthly budget are <strong>Pro</strong>.</li>
+        <li><strong>Borrowed &amp; Lent Money</strong> — track money you borrowed or lent. Log each installment/repayment, see original amount, paid total, and balance due. Share a WhatsApp-ready summary from the loan detail or list — balance first, then totals, then a payment list with ➕ for lent/borrowed and ➖ for paybacks.</li>
+        <li><strong>Bills</strong> — name, amount, due date, frequency, and reminder.</li>
+        <li><strong>Subscriptions</strong> — provider, cost, billing frequency, next billing date, and active/cancelled status.</li>
+        <li><strong>Reports (Pro)</strong> — yearly expense/income breakdown, open loans summary, upcoming bills/subscriptions, and CSV export for expenses.</li>
+      </ul>
+    </section>
+
+    <section id="life">
+      <h2>Life: documents, notes, journal, cycle &amp; assets</h2>
+      <ul>
+        <li><strong>Document Shelf (Pro)</strong> — store passports, licenses, insurance, contracts, or custom types. Attach images, PDFs, or DOC files from camera, gallery, or phone storage. Add tags and scan text from a photo (on-device) so documents are easier to find later. Share or download attachments. With an expiry date, LifePilot creates a reminder 15 days before.</li>
+        <li><strong>Notes</strong> — text notes with categories, tags, and search.</li>
+        <li><strong>Journals</strong> — dated entries; add up to 3 photos from camera or gallery.</li>
+        <li><strong>Menstrual Calendar</strong> — tap an empty day to start a period. Tap a marked period to edit the dates or delete it. Overlapping periods are blocked.</li>
+        <li><strong>Important dates</strong> — birthdays, anniversaries, events, and custom dates with yearly recurrence.</li>
+        <li><strong>Goals &amp; habits</strong> — track progress, frequency, and streaks.</li>
+        <li><strong>Home</strong> — appliances and items with purchase and warranty dates.</li>
+        <li><strong>Vehicles</strong> — registration, insurance, service dates, and odometer notes.</li>
+      </ul>
+      <p class="tip">
+        Large files are stored as attachments on your device, not inside the database. Drive backups include those files.
+      </p>
+    </section>
+
+    <section id="tools">
+      <h2>Tools: clock, codes, measure &amp; more</h2>
+      <p>Open <strong>Tools</strong> from the bottom bar. Camera, photos, microphone, and location are asked only when you open the feature that needs them.</p>
+      <ul>
+        <li><strong>PDF Scanner/Creator (Pro)</strong> — document or ID card. Crop each photo, then save, share, or upload a PDF.</li>
+        <li><strong>QR Code Creator &amp; Scanner</strong> — scan with the camera (flashlight on or off) or from a photo. Copy, share, or open the result. History keeps past scans. Create URL, text, contact, email, SMS, location, phone, calendar, or Wi‑Fi codes. <strong>My QR</strong> shares your contact card. Color and a center logo are Pro (the lock is visible on the free plan).</li>
+        <li><strong>Barcode Reader &amp; Creator</strong> — same flow for EAN, UPC, Code 39/93/128, ITF, Codabar, PDF417, Data Matrix, and Aztec. Color is Pro. A center logo is Pro and only on 2D codes. <strong>My code</strong> stores your contact card as PDF417.</li>
+        <li><strong>Compass</strong> — heading dial is free. Camera, map, and satellite views are <strong>Pro</strong> (free users get a short preview, then an upgrade prompt). If the reading is weak, calibrate by moving the phone in a figure-8.</li>
+        <li><strong>Advance Calculator (Pro)</strong> — scientific calculator first, then expressions, history, units, percent tools, date and time, Split/Tip, and formulas (including Amount Growth).</li>
+        <li><strong>World Clock</strong> — analog and digital clock, saved cities, stopwatch, and timer.</li>
+        <li><strong>Voice Recorder</strong> — high-quality recordings saved on the phone. Play or share them later.</li>
+        <li><strong>Measure</strong> — Object mode locks a <em>table, floor, or wall</em> first (the + turns green), then you place points along the object. It does not lock onto the object itself. Plot mode walks outdoor corners with GPS. Results are estimates.</li>
+        <li><strong>Digital Ruler</strong> — full-screen landscape scale along both long edges. Switch inch or cm, drag for a measurement, and use the center close button to return to Tools. Calibrate from the ⋮ menu if it does not match a real ruler.</li>
+        <li><strong>Calendar</strong> — month view of tasks, reminders, bills, loans, important dates, and subscriptions.</li>
+        <li><strong>Home-screen widgets</strong> — Home menu → <strong>Create widgets</strong>. Add <strong>World Clock</strong> (live city times), <strong>Voice record</strong> (tap to start/stop), or <strong>Quick Add</strong> (jump into common create flows).</li>
+      </ul>
+    </section>
+
+    <section id="notifications">
+      <h2>Notifications</h2>
+      <p>LifePilot uses local device notifications — not a push server. Times use your phone’s local timezone.</p>
+      <ul>
+        <li>Tasks, reminders, bills, important dates, loans, scheduled calls, and call trees can fire local alerts.</li>
+        <li>Scheduled call reminders use your phone’s default ringtone.</li>
+        <li>Keep notification permission enabled for reliable reminders.</li>
+        <li>On Android, allow alarms / exact alarms if asked, and avoid aggressive battery restrictions for LifePilot.</li>
+      </ul>
+    </section>
+
+    <section id="backup">
+      <h2>Backup &amp; Google Drive</h2>
+      <ul>
+        <li>Backup &amp; restore is a <strong>Pro</strong> feature via <strong>More → Backup &amp; Restore</strong>.</li>
+        <li>Connect your Google account once; LifePilot remembers it so you are not prompted every time (remove the account in Settings if you want to switch).</li>
+        <li>Backup uploads a ZIP of all app data — including documents, journal photos, and voice recordings — to your Drive folder <strong>LifePilot</strong>.</li>
+        <li><strong>Auto Daily Backup</strong> writes one extra file, <strong>LifePilotAutoDailyBackup.zip</strong>, once a day and replaces that same file. Manual backups are kept as their own files. The daily file appears in the backup list so you can restore it.</li>
+        <li>The daily backup runs when you open LifePilot (after you unlock, if app lock is on) and you are still signed in to Drive.</li>
+        <li>Restore downloads a backup from Drive and replaces your current local data (confirm carefully).</li>
+      </ul>
+    </section>
+
+    <section id="security">
+      <h2>Security, search &amp; calendar sync</h2>
+      <ul>
+        <li>Optional <strong>App lock</strong> under More → Security. When enabled, LifePilot asks for your PIN when you open the app (and after you leave it in the background).</li>
+        <li><strong>Search</strong> under More finds tasks, notes, expenses, loans, documents, and more on your device.</li>
+        <li><strong>Calendar sync</strong> under More (or Settings) can write important dates, task due dates, and bills to your phone calendar when you grant calendar permission.</li>
+      </ul>
+    </section>
+
+    <section id="free-pro">
+      <h2>Free vs Pro</h2>
+      <p>LifePilot is one application. Free and Pro are entitlements inside the same app.</p>
+      <ul>
+        <li><strong>Free</strong> — core modules including tasks, calls, money, life tracking, and more, with sensible limits.</li>
+        <li><strong>Pro</strong> — Bulk SMS, Document Vault, PDF Scanner/Creator, Advance Calculator, expense charts &amp; budget, QR and barcode color and logo, advanced search &amp; reports, export, Google Drive backup &amp; restore (including Auto Daily Backup), higher limits.</li>
+      </ul>
+      <p class="tip">
+        If Pro expires, your local data is not deleted. Free features keep working; Pro-only features become unavailable until you renew.
+      </p>
+    </section>
+
+    <section id="privacy">
+      <h2>Privacy</h2>
+      <p>
+        LifePilot is local-first: no LifePilot login and no LifePilot cloud sync for everyday data.
+        See the full <a href="privacy.html">Privacy Policy</a>.
+      </p>
+    </section>
+
+    <section id="tips">
+      <h2>Tips &amp; contact</h2>
+      <ul>
+        <li>Use Quick Add when you only have a few seconds.</li>
+        <li>Use <strong>Install Latest Version</strong> in the Home menu to open the download page.</li>
+        <li>Share the install page: <a href="app.html">Get LifePilot</a>.</li>
+      </ul>
+      <p>
+        Need more help? Email
+        <a href="mailto:noorappssupport@gmail.com?subject=LifePilot%3AIssue%3A">noorappssupport@gmail.com</a>
+        with subject <strong>LifePilot:Issue:</strong> plus a short description, your device type, and what went wrong.
+      </p>
+    </section>
+
+    <footer>
+      <p class="page-links" style="justify-content: center;">
+        <a href="app.html">Get the app</a>
+        <a href="app.html" data-share-app>Share App</a>
+        <a href="index.html">Home</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="privacy.html">Privacy</a>
+      </p>
+      © Noor Apps · LifePilot — Help Centre
+    </footer>
+  </main>
+  <script src="js/share-app.js"></script>
+</body>
+</html>
