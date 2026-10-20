@@ -4,109 +4,199 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Get Rent Manager</title>
-  <meta name="description" content="Download Rent Manager for Android or find Rent Manager by Noor Apps on the App Store." />
+  <meta name="description" content="Install Rent Manager — a local-first app for tenancies, rent payments, receipts, reminders, and property records." />
+  <meta property="og:title" content="Get Rent Manager" />
+  <meta property="og:description" content="Navigate your portfolio. Tenancies, rent, receipts, and reminders — kept locally on your device." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://noorapps.net/rentmanager/app.html" />
+  <meta property="og:image" content="https://noorapps.net/rentmanager/images/RentManagerPoster.jpeg" />
+  <meta property="og:site_name" content="Rent Manager" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Get Rent Manager" />
+  <meta name="twitter:description" content="Navigate your portfolio. Tenancies, rent, receipts, and reminders — kept locally on your device." />
+  <meta name="twitter:image" content="https://noorapps.net/rentmanager/images/RentManagerPoster.jpeg" />
   <link rel="canonical" href="https://noorapps.net/rentmanager/app.html" />
+  <link rel="icon" href="images/rent_manager_icon.jpg" type="image/jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1a1f36;
+      --muted: #5b647a;
+      --paper: #f5f7fc;
+      --accent: #2451c4;
+      --accent-deep: #1a3a8f;
+      --line: rgba(26, 58, 143, 0.16);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: "Manrope", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(900px 480px at 12% -8%, #dbe7ff 0%, transparent 58%),
+        radial-gradient(700px 420px at 92% 8%, #c8f5ef 0%, transparent 52%),
+        linear-gradient(180deg, #eef3ff 0%, var(--paper) 42%, #f0fbf9 100%);
+      display: grid;
+      place-items: center;
+      padding: 1.5rem;
+    }
+    .card {
+      width: min(36rem, 100%);
+      text-align: center;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 1.4rem 1.4rem 1.75rem;
+      box-shadow: 0 18px 40px rgba(26, 58, 143, 0.1);
+    }
+    .poster {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 10px 24px rgba(26, 58, 143, 0.16);
+    }
+    h1 {
+      margin: 1rem 0 0.35rem;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.85rem;
+      color: var(--accent-deep);
+      letter-spacing: -0.02em;
+    }
+    .lead {
+      margin: 0 0 1.4rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .status {
+      margin: 0 0 1.25rem;
+      font-weight: 800;
+      line-height: 1.4;
+      color: var(--ink);
+    }
+    .soon {
+      color: var(--accent-deep);
+      font-size: 1.05rem;
+      padding: 0.9rem 1rem;
+      border-radius: 16px;
+      background: rgba(36, 81, 196, 0.08);
+      border: 1px solid var(--line);
+    }
+    .store-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: stretch;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      min-height: 48px;
+      padding: 0.7rem 1.3rem;
+      border-radius: 999px;
+      font-weight: 800;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(36, 81, 196, 0.28);
+    }
+    .btn:hover { background: var(--accent-deep); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--accent-deep);
+      border: 1.5px solid rgba(36, 81, 196, 0.35);
+      box-shadow: none;
+    }
+    .btn-secondary:hover {
+      background: rgba(36, 81, 196, 0.06);
+    }
+    .btn svg { flex: none; }
+    .home {
+      display: inline-block;
+      margin-top: 1.15rem;
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .home:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <img class="poster" src="images/RentManagerPoster.jpeg" alt="Rent Manager" width="640" height="360" />
+    <h1>Rent Manager</h1>
+    <p class="lead">Navigate your portfolio. Keep tenancies, rent, receipts, reminders, and property records together — locally on your device.</p>
+    <p id="status" class="status">Choose your platform below.</p>
+    <p id="ios-soon" class="status soon hidden">iOS App Launching Soon — Stay Tuned!</p>
+    <div class="store-row">
+      <a id="play-btn" class="btn" href="https://play.google.com/store/apps/details?id=com.noorapps.rentmanager" rel="noopener noreferrer" target="_blank">
+        <svg width="22" height="24" viewBox="0 0 512 566" role="img" aria-hidden="true" focusable="false">
+          <path fill="#00D2FF" d="M21 8C10 19 4 36 4 58v450c0 22 6 39 17 50l2 2 252-252v-6L23 6l-2 2z" />
+          <path fill="#FFCE00" d="M357 366l-84-84v-6l84-84 2 1 100 57c28 16 28 42 0 58l-100 57-2 1z" />
+          <path fill="#FF3A44" d="M359 365l-86-86L21 531c9 10 24 11 42 1l296-167" />
+          <path fill="#00E676" d="M359 193L63 26C45 16 30 17 21 27l252 252 86-86z" />
+        </svg>
+        Get it on Google Play
+      </a>
+      <a id="ios-btn" class="btn btn-secondary" href="https://apps.apple.com/app/rent-manager/id0000000000" rel="noopener noreferrer" target="_blank">
+        <svg width="18" height="22" viewBox="0 0 384 512" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
+        </svg>
+        Download on the App Store
+      </a>
+    </div>
+
+    <a class="home" href="index.html">Back to website</a>
+  </main>
   <script>
     (function () {
-      var playStoreUrl = "https://play.google.com/store/apps/details?id=com.noorapps.rentmanager";
-      if (/Android/i.test(navigator.userAgent)) {
-        window.location.replace(playStoreUrl);
+      var PLAY_STORE = "https://play.google.com/store/apps/details?id=com.noorapps.rentmanager";
+      var APP_STORE = "https://apps.apple.com/app/rent-manager/id0000000000";
+
+      var ua = navigator.userAgent || navigator.vendor || "";
+      var isIos = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+      var isAndroid = /android/i.test(ua);
+
+      var statusEl = document.getElementById("status");
+      var iosSoonEl = document.getElementById("ios-soon");
+      var playBtn = document.getElementById("play-btn");
+      var iosBtn = document.getElementById("ios-btn");
+
+      if (playBtn) playBtn.href = PLAY_STORE;
+      if (iosBtn) iosBtn.href = APP_STORE;
+
+      if (isAndroid) {
+        if (statusEl) statusEl.textContent = "Taking you to Google Play…";
+        window.setTimeout(function () {
+          window.location.replace(PLAY_STORE);
+        }, 400);
+        return;
+      }
+
+      if (isIos) {
+        var iosReady = false;
+        if (!iosReady) {
+          if (statusEl) statusEl.classList.add("hidden");
+          if (iosSoonEl) iosSoonEl.classList.remove("hidden");
+          if (iosBtn) iosBtn.classList.add("hidden");
+          return;
+        }
+        if (statusEl) statusEl.textContent = "Taking you to the App Store…";
+        window.setTimeout(function () {
+          window.location.replace(APP_STORE);
+        }, 400);
+        return;
+      }
+
+      if (statusEl) {
+        statusEl.textContent = "Rent Manager is on Google Play. On iOS, launch is coming soon — use the buttons below.";
       }
     }());
   </script>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="logo.svg" type="image/svg+xml" />
-</head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Rent Manager home">
-      <span class="brand-mark"><img src="logo.svg" alt="" /></span>
-      <span>Rent Manager</span>
-    </a>
-    <nav class="nav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a class="active" href="app.html">Get the app</a>
-      <a href="help.html">Help</a>
-      <a href="../index.html">About</a>
-      <a href="privacy.html">Privacy</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div>
-        <p class="eyebrow">Download</p>
-        <h1>Start with one tenancy for free.</h1>
-        <p class="lead">Install Rent Manager and keep your rental records, payments, receipts, maintenance notes, and optional documents organized from day one.</p>
-        <div class="actions">
-          <a class="button" href="https://play.google.com/store/apps/details?id=com.noorapps.rentmanager">Get it on Google Play</a>
-          <a class="button secondary" href="#ios">iPhone and iPad</a>
-        </div>
-      </div>
-      <aside class="hero-card">
-        <p class="eyebrow" style="color: #dffcff;">Quick start</p>
-        <h2>Set up in minutes.</h2>
-        <ul class="list" style="color: #eafcff;">
-          <li>Install the app from your store.</li>
-          <li>Add owner name and currency.</li>
-          <li>Create your first tenancy record.</li>
-        </ul>
-      </aside>
-    </section>
-
-    <section class="section">
-      <div class="grid two">
-        <article class="card">
-          <div class="card-icon">A</div>
-          <h2>Android</h2>
-          <p>Open the Google Play listing, install the app, then complete the first-time setup by entering the owner name and preferred currency.</p>
-          <p><a class="button" href="https://play.google.com/store/apps/details?id=com.noorapps.rentmanager">Open Google Play</a></p>
-        </article>
-        <article id="ios" class="card">
-          <div class="card-icon">i</div>
-          <h2>iPhone and iPad</h2>
-          <p>Search the App Store for <strong>Rent Manager by Noor Apps</strong>. Check the app name and developer before installing.</p>
-          <p class="lead">If you need help finding it, contact support and include your country or region.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="panel split">
-        <div>
-          <p class="eyebrow">Free and Pro</p>
-          <h2>Choose what matches your portfolio.</h2>
-          <p class="lead">The free version is useful for a single tenancy. Pro unlocks extra capacity and backup features for owners managing more.</p>
-        </div>
-        <div class="grid two">
-          <div class="notice">
-            <h3>Free</h3>
-            <ul class="list">
-              <li>Manage one tenancy.</li>
-              <li>Track rent, discounts, receipts, and maintenance.</li>
-              <li>Keep records local on your device.</li>
-            </ul>
-          </div>
-          <div class="notice">
-            <h3>Pro</h3>
-            <ul class="list">
-              <li>Add more than one tenancy.</li>
-              <li>Use Google Drive backup.</li>
-              <li>Enable automatic daily backup.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <span>© Noor Apps · Rent Manager</span>
-    <nav aria-label="Footer navigation">
-      <a href="mailto:noorappssupport@gmail.com">Support</a>
-      <a href="help.html">Help</a>
-      <a href="privacy.html">Privacy</a>
-    </nav>
-  </footer>
 </body>
 </html>
