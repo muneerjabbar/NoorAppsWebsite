@@ -49,19 +49,20 @@
       padding: 1.5rem;
     }
     .card {
-      width: min(36rem, 100%);
+      width: min(30rem, 100%);
       text-align: center;
       background: rgba(255, 255, 255, 0.72);
       border: 1px solid var(--line);
       border-radius: 24px;
-      padding: 1.4rem 1.4rem 1.75rem;
+      padding: 2.1rem 1.5rem 1.75rem;
       box-shadow: 0 18px 40px rgba(26, 58, 143, 0.1);
     }
-    .poster {
-      width: 100%;
-      height: auto;
-      border-radius: 16px;
-      box-shadow: 0 10px 24px rgba(26, 58, 143, 0.16);
+    .logo {
+      width: 88px;
+      height: 88px;
+      border-radius: 22px;
+      box-shadow: 0 10px 24px rgba(26, 58, 143, 0.2);
+      object-fit: cover;
     }
     h1 {
       margin: 1rem 0 0.35rem;
@@ -133,7 +134,7 @@
 </head>
 <body>
   <main class="card">
-    <img class="poster" src="images/rent_manager_icon.jpg" alt="Rent Manager" width="640" height="360" />
+    <img class="logo" src="images/rent_manager_icon.jpg" alt="Rent Manager" width="88" height="88" />
     <h1>Rent Manager</h1>
     <p class="lead">Navigate your portfolio. Keep tenancies, rent, receipts, reminders, and property records together — locally on your device.</p>
     <p id="status" class="status">Choose your platform below.</p>

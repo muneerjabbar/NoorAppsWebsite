@@ -213,6 +213,18 @@ p {
   color: var(--primary-dark);
 }
 
+.share-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+a[data-share-app] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
 .hero-card {
   position: relative;
   z-index: 1;
