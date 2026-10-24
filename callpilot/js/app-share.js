@@ -1,6 +1,6 @@
 (function () {
   var PLAY_STORE =
-    'https://play.google.com/store/apps/details?id=com.callpilot.callpilot';
+    'https://play.google.com/store/apps/details?id=com.callpilot.callpilot.pro';
   var ua = navigator.userAgent || navigator.vendor || '';
   var isIos =
     /iPad|iPhone|iPod/.test(ua) ||
